@@ -279,7 +279,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 </div>
 
 <script>
-const PW = 'pma2025';
+const PW = '';
 const SK = 'pma_v2';
 
 const BASE_SYS = `Sos un especialista senior en performance marketing y estrategia comercial. Experto en Meta Ads, Google Ads, copywriting de conversión y estrategia de negocio.
@@ -319,14 +319,10 @@ function getH(id) { return state.histories[id] || []; }
 function setH(id, h) { state.histories[id] = h; save(); }
 
 function login() {
-  if (document.getElementById('pw').value === PW) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'flex';
-    checkKey(); initApp();
-  } else {
-    const e = document.getElementById('login-err');
-    e.classList.add('show'); setTimeout(() => e.classList.remove('show'), 2000);
-  }
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  checkKey();
+  initApp();
 }
 
 function logout() {
